@@ -3,6 +3,8 @@ rasppi_node-red_Sump_Pump_Monitor
 
 Monitor for sump pump based on Node-Red running on a RaspberryPi
 
+This is here on GitHub because I got tired of the power going out, corrupting my SD card and I need to rebuild this. Maybe you will find it useful for inspiration?
+
 ### About
 
 The sump-pump is one of those things that you don't pay attention to, expecting it to work - which it will, until it doesn't.
