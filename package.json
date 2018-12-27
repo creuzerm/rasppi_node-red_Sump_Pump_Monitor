@@ -1,11 +1,10 @@
 {
     "name": "rasppi_node-red_Sump_Pump_Monitor",
-    "description": "Monitor for sump pump",
+    "description": "Raspberry Pi & Node Red cycling monitor for a sump pump",
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-aggregator": "1.4.0",
         "node-red-dashboard": "2.13.0",
-        "node-red-contrib-github": "0.1.5",
         "node-red-contrib-brads-i2c-nodes": "0.0.5-alpha"
     },
     "node-red": {
