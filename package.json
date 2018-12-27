@@ -1,0 +1,12 @@
+{
+    "name": "rasppi_node-red_Sump_Pump_Monitor",
+    "description": "Monitor for sump pump",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows_SumpPump.json",
+            "credentialsFile": "flows_SumpPump_cred.json"
+        }
+    }
+}
