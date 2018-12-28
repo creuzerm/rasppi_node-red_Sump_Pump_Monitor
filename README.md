@@ -23,9 +23,10 @@ Controls the data collection and presentation.
 ![Sump Pump Flow](https://user-images.githubusercontent.com/779440/50488705-5f181100-09c9-11e9-8a3c-aa6b93d36368.png)
 ### Computer
 Remote monitoring of the RaspberryPi and some basic controls such as package updates and reboot.
+![Computer control Node Red Flow](https://user-images.githubusercontent.com/779440/50499583-5565cc00-0a10-11e9-9ccb-02aca851c234.png)
 ### Backup
 Sends data to Dropbox for off-site storage. This is also maintained as a Node-Red 'Project' and changes are pushed here to github.
-
+![Dropbox controls Node Red Flow](https://user-images.githubusercontent.com/779440/50499592-6e6e7d00-0a10-11e9-9969-23dfe816dd13.png)
 
 
 

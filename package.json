@@ -5,7 +5,8 @@
     "dependencies": {
         "node-red-contrib-aggregator": "1.4.0",
         "node-red-dashboard": "2.13.0",
-        "node-red-contrib-brads-i2c-nodes": "0.0.5-alpha"
+        "node-red-contrib-brads-i2c-nodes": "0.0.5-alpha",
+        "node-red-node-dropbox": "1.0.2"
     },
     "node-red": {
         "settings": {
