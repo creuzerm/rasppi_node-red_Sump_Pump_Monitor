@@ -223,6 +223,7 @@
         "append": "",
         "useSpawn": "",
         "timer": "",
+        "oldrc": false,
         "name": "RPi Temp.",
         "x": 370,
         "y": 160,
@@ -285,7 +286,7 @@
         "oldrc": false,
         "name": "Reboot",
         "x": 360,
-        "y": 560,
+        "y": 780,
         "wires": [
             [],
             [],
@@ -304,7 +305,7 @@
         "oldrc": false,
         "name": "Shutdown",
         "x": 357,
-        "y": 629,
+        "y": 849,
         "wires": [
             [],
             [],
@@ -326,7 +327,7 @@
         "wires": [
             [
                 "c51f53fd.190b5",
-                "55dabe6b.b2bf"
+                "149bf498.1617cb"
             ],
             [],
             []
@@ -336,7 +337,7 @@
         "id": "83afe701.9102a8",
         "type": "exec",
         "z": "7d7d7629.7b8f98",
-        "command": "free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'",
+        "command": "free | grep Mem | awk '{print 100*(($2-$7))/$2}'",
         "addpay": false,
         "append": "",
         "useSpawn": "",
@@ -453,7 +454,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 2,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -466,7 +467,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 122,
-        "y": 560,
+        "y": 780,
         "wires": [
             [
                 "deded38b.bf53c"
@@ -479,7 +480,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 1,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -505,7 +506,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 3,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -530,7 +531,7 @@
         "type": "ui_text",
         "z": "7d7d7629.7b8f98",
         "group": "489c2c24.01be04",
-        "order": 4,
+        "order": 6,
         "width": 0,
         "height": 0,
         "name": "",
@@ -603,19 +604,19 @@
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "Free Memory % (used/free)",
+        "title": "Used Memory %",
         "label": "RAM",
         "format": "{{value}}",
         "min": 0,
-        "max": "500",
+        "max": "100",
         "colors": [
-            "#ca3838",
+            "#008000",
             "#e6e600",
-            "#00b500"
+            "#800000"
         ],
         "seg1": "",
         "seg2": "",
-        "x": 940,
+        "x": 910,
         "y": 300,
         "wires": []
     },
@@ -1876,8 +1877,8 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 895,
-        "y": 431,
+        "x": 890,
+        "y": 440,
         "wires": [
             [],
             []
@@ -1926,24 +1927,6 @@
         ]
     },
     {
-        "id": "55dabe6b.b2bf",
-        "type": "aggregator",
-        "z": "7d7d7629.7b8f98",
-        "name": "",
-        "topic": "",
-        "intervalCount": 1,
-        "intervalUnits": "m",
-        "submitIncompleteInterval": true,
-        "aggregationType": "mean",
-        "x": 710,
-        "y": 100,
-        "wires": [
-            [
-                "149bf498.1617cb"
-            ]
-        ]
-    },
-    {
         "id": "9e30bf7a.c5e95",
         "type": "aggregator",
         "z": "7d7d7629.7b8f98",
@@ -1958,6 +1941,100 @@
         "wires": [
             [
                 "be77e23a.385c4"
+            ]
+        ]
+    },
+    {
+        "id": "1a0e55b0.e3476a",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "df -h ",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Disk Usage",
+        "x": 370,
+        "y": 580,
+        "wires": [
+            [
+                "f7c2ec57.504ff"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4b19effc.6269e",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "free -h",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Free Memory",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "f7c2ec57.504ff"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d3593669.2fbbf8",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Memory",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "4b19effc.6269e"
+            ]
+        ]
+    },
+    {
+        "id": "cb46017e.02de5",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Disk",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "1a0e55b0.e3476a"
             ]
         ]
     }
