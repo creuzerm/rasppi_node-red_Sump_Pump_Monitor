@@ -1,1 +1,1964 @@
-[{"id":"e17d6fbc.3278a","type":"tab","label":"Sump","disabled":false,"info":"Sump pump monitoring and display"},{"id":"878c1f9a.52d41","type":"tab","label":"Backup","disabled":false,"info":"Save the captured csv files out to dropbox daily."},{"id":"7d7d7629.7b8f98","type":"tab","label":"CPU Monitoring","disabled":false,"info":"Processor and resource monitoring."},{"id":"5c2a7bbf.91c7f4","type":"ui_tab","z":"","name":"Computer","icon":"computer","disabled":false,"hidden":false},{"id":"d4971c1d.ee396","type":"ui_group","z":"","name":"Memory","tab":"5c2a7bbf.91c7f4","order":2,"disp":true,"width":"6","collapse":false},{"id":"60c15651.e10928","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Sump Pump","hideToolbar":"false","allowSwipe":"false","lockMenu":"false","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"aa1491c8.4885a","type":"ui_group","z":"","name":"Temperature (F)","tab":"49a420dc.938ee","disp":true,"width":"10","collapse":false},{"id":"49a420dc.938ee","type":"ui_tab","z":"","name":"Sump","icon":"trending_up","order":2,"disabled":false,"hidden":false},{"id":"489c2c24.01be04","type":"ui_group","z":"","name":"Commands","tab":"5c2a7bbf.91c7f4","order":3,"disp":true,"width":"6","collapse":false},{"id":"2621a588.cddb7a","type":"ui_group","z":"","name":"Processor","tab":"5c2a7bbf.91c7f4","order":1,"disp":true,"width":"6","collapse":false},{"id":"98f006bc.69a0c8","type":"ui_group","z":"","name":"Pressure","tab":"49a420dc.938ee","disp":true,"width":"10","collapse":false},{"id":"e8763a51.0ff9c8","type":"ui_base","theme":{"name":"theme-dark","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#097479","value":"#097479","edited":false},"page-titlebar-backgroundColor":{"value":"#097479","edited":false},"page-backgroundColor":{"value":"#111111","edited":false},"page-sidebar-backgroundColor":{"value":"#000000","edited":false},"group-textColor":{"value":"#0eb8c0","edited":false},"group-borderColor":{"value":"#555555","edited":false},"group-backgroundColor":{"value":"#333333","edited":false},"widget-textColor":{"value":"#eeeeee","edited":false},"widget-backgroundColor":{"value":"#097479","edited":false},"widget-borderColor":{"value":"#333333","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Sump Pump Dashboard","hideToolbar":"false","allowSwipe":"false","lockMenu":"false","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"3fedbc7a.18f394","type":"ui_tab","z":"","name":"Temperature","icon":"timeline","order":1,"disabled":false,"hidden":false},{"id":"8aae7fee.6ebaa","type":"ui_tab","z":"","name":"RPi Control","icon":"computer","order":2,"disabled":false,"hidden":false},{"id":"57f7756b.a9b5ec","type":"dropbox-config","z":"","name":""},{"id":"578381cc.a254c","type":"exec","z":"7d7d7629.7b8f98","command":"vcgencmd measure_temp","addpay":false,"append":"","useSpawn":"","timer":"","name":"RPi Temp.","x":370,"y":80,"wires":[["689af081.022e1"],[],[]]},{"id":"2503e08.a8c7a2","type":"inject","z":"7d7d7629.7b8f98","name":"","topic":"","payload":"","payloadType":"date","repeat":"10","crontab":"","once":false,"x":150,"y":80,"wires":[["578381cc.a254c","c04ea477.99c6e8","83afe701.9102a8"]]},{"id":"689af081.022e1","type":"function","z":"7d7d7629.7b8f98","name":"","func":"str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;","outputs":1,"noerr":0,"x":550,"y":80,"wires":[["20df8a89.c57f06","be77e23a.385c4"]]},{"id":"deded38b.bf53c","type":"exec","z":"7d7d7629.7b8f98","command":"sudo reboot","addpay":false,"append":"","useSpawn":"","timer":"","oldrc":false,"name":"Reboot","x":358,"y":460,"wires":[[],[],[]]},{"id":"420f0f1c.1c6b6","type":"exec","z":"7d7d7629.7b8f98","command":"sudo shutdown -h now","addpay":false,"append":"","useSpawn":"","timer":"","oldrc":false,"name":"Shutdown","x":355,"y":529,"wires":[[],[],[]]},{"id":"c04ea477.99c6e8","type":"exec","z":"7d7d7629.7b8f98","command":"top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'","addpay":false,"append":"","useSpawn":"","timer":"","name":"CPU Load","x":370,"y":160,"wires":[["c51f53fd.190b5"],[],[]]},{"id":"83afe701.9102a8","type":"exec","z":"7d7d7629.7b8f98","command":"free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'","addpay":false,"append":"","useSpawn":"","timer":"","oldrc":false,"name":"Free Memory","x":370,"y":240,"wires":[["418c280a.1e7e18","af1abfc4.3fc03","3d9ef38a.e251bc"],[],[]]},{"id":"e4b83e50.dac04","type":"exec","z":"7d7d7629.7b8f98","command":"df -h","addpay":false,"append":"","useSpawn":"","timer":"","name":"Disk Usage","x":365,"y":329,"wires":[["2f505435.dc803c"],[],[]]},{"id":"2f505435.dc803c","type":"function","z":"7d7d7629.7b8f98","name":"","func":"var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;","outputs":1,"noerr":0,"x":565,"y":329,"wires":[["bbc45a31.4dced8"]]},{"id":"37250380.d2293c","type":"inject","z":"7d7d7629.7b8f98","name":"","topic":"","payload":"","payloadType":"date","repeat":"3600","crontab":"","once":true,"x":150,"y":320,"wires":[["e4b83e50.dac04"]]},{"id":"3d9ef38a.e251bc","type":"debug","z":"7d7d7629.7b8f98","name":"","active":false,"console":"false","complete":"false","x":765,"y":189,"wires":[]},{"id":"164e284e.3f98d8","type":"exec","z":"7d7d7629.7b8f98","command":"sudo apt-get -qq update; sudo apt-get -qq upgrade -y; cd ~/.node-red/; npm update --quiet","addpay":false,"append":"","useSpawn":"false","timer":"","oldrc":false,"name":"Update","x":356,"y":603,"wires":[["f198ade4.d1a5f","f7c2ec57.504ff"],["f198ade4.d1a5f"],["f198ade4.d1a5f"]]},{"id":"f198ade4.d1a5f","type":"debug","z":"7d7d7629.7b8f98","name":"","active":true,"console":"false","complete":"false","x":765,"y":609,"wires":[]},{"id":"fb344d1.5eaccb","type":"ui_button","z":"7d7d7629.7b8f98","name":"","group":"489c2c24.01be04","order":2,"width":0,"height":0,"passthru":false,"label":"Reboot","tooltip":"","color":"","bgcolor":"red","icon":"","payload":"","payloadType":"str","topic":"","x":120,"y":460,"wires":[["deded38b.bf53c"]]},{"id":"547f0f7f.db18c","type":"ui_button","z":"7d7d7629.7b8f98","name":"","group":"489c2c24.01be04","order":1,"width":0,"height":0,"passthru":false,"label":"Update Packages","tooltip":"","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"","x":150,"y":600,"wires":[["164e284e.3f98d8"]]},{"id":"a53d88fd.63e4b8","type":"ui_button","z":"7d7d7629.7b8f98","name":"","group":"489c2c24.01be04","order":3,"width":0,"height":0,"passthru":false,"label":"Clear","tooltip":"","color":"","bgcolor":"","icon":"","payload":" ","payloadType":"str","topic":"","x":110,"y":560,"wires":[["f7c2ec57.504ff"]]},{"id":"f7c2ec57.504ff","type":"ui_text","z":"7d7d7629.7b8f98","group":"489c2c24.01be04","order":4,"width":0,"height":0,"name":"","label":"Messages:","format":"{{msg.payload}}","layout":"col-center","x":765,"y":569,"wires":[]},{"id":"20df8a89.c57f06","type":"ui_gauge","z":"7d7d7629.7b8f98","name":"","group":"2621a588.cddb7a","order":2,"width":0,"height":0,"gtype":"gage","title":"CPU Temperature","label":"C","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":785,"y":69,"wires":[]},{"id":"c51f53fd.190b5","type":"ui_gauge","z":"7d7d7629.7b8f98","name":"","group":"2621a588.cddb7a","order":1,"width":0,"height":0,"gtype":"gage","title":"Processor","label":"CPU","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":755,"y":149,"wires":[]},{"id":"418c280a.1e7e18","type":"ui_gauge","z":"7d7d7629.7b8f98","name":"","group":"d4971c1d.ee396","order":1,"width":0,"height":0,"gtype":"gage","title":"Free Memory % (used/free)","label":"RAM","format":"{{value}}","min":0,"max":"500","colors":["#ca3838","#e6e600","#00b500"],"seg1":"","seg2":"","x":815,"y":229,"wires":[]},{"id":"bbc45a31.4dced8","type":"ui_gauge","z":"7d7d7629.7b8f98","name":"","group":"d4971c1d.ee396","order":3,"width":0,"height":0,"gtype":"gage","title":"Disk","label":"Usage","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":745,"y":329,"wires":[]},{"id":"be77e23a.385c4","type":"ui_chart","z":"7d7d7629.7b8f98","name":"","group":"2621a588.cddb7a","order":3,"width":0,"height":0,"label":"","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"24","removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":true,"x":745,"y":109,"wires":[[],[]]},{"id":"af1abfc4.3fc03","type":"ui_chart","z":"7d7d7629.7b8f98","name":"","group":"d4971c1d.ee396","order":2,"width":0,"height":0,"label":"","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"24","removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":true,"x":745,"y":269,"wires":[[],[]]},{"id":"13238a13.102676","type":"inject","z":"e17d6fbc.3278a","name":"","topic":"","payload":"measure","payloadType":"str","repeat":"60","crontab":"","once":true,"onceDelay":"1","x":100,"y":260,"wires":[["6810c127.e540a","f7166df6.616b1"]]},{"id":"6810c127.e540a","type":"bmp280","z":"e17d6fbc.3278a","name":"bmp280 Sump","topic":"Sump","address":119,"powermode":1,"tresolution":"32","presolution":"4","x":320,"y":220,"wires":[["7f954b3b.9e1614","60c5a0d8.c7119"],[]]},{"id":"7d085b37.cb7824","type":"ui_chart","z":"e17d6fbc.3278a","name":"","group":"aa1491c8.4885a","order":1,"width":"0","height":"0","label":"Temp Last Hour (F)","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":false,"x":1350,"y":220,"wires":[["475fd563.f8a0dc"],[]]},{"id":"7f954b3b.9e1614","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.temperatureF);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    //msg.payload.temperatureF = num.toFixed(2); \n    outputMsgs.push({topic:\"Ambient\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":570,"y":180,"wires":[["7d085b37.cb7824","4fa02458.94fe0c"]]},{"id":"60c5a0d8.c7119","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.pressure);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    num = num / 100; // bring the value back in line \n    outputMsgs.push({topic:\"Ambient\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":570,"y":220,"wires":[["29e9359f.681aaa","d0a0d204.88eeb"]]},{"id":"29e9359f.681aaa","type":"ui_chart","z":"e17d6fbc.3278a","name":"","group":"98f006bc.69a0c8","order":1,"width":"0","height":"0","label":"Pressure Last Hour (KPA)","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":false,"x":1370,"y":280,"wires":[["b3e70cfc.70199"],[]]},{"id":"f7166df6.616b1","type":"bmp280","z":"e17d6fbc.3278a","name":"bmp280 Ambient","topic":"Ambient","address":"118","powermode":1,"tresolution":"32","presolution":"4","x":330,"y":280,"wires":[["804606cf.bdfa18","4c709e78.42002"],[]]},{"id":"804606cf.bdfa18","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.temperatureF);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    //msg.payload.temperatureF = num.toFixed(2); \n    outputMsgs.push({topic:\"Sump\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":570,"y":280,"wires":[["7d085b37.cb7824","5fd80ff9.59d93"]]},{"id":"4c709e78.42002","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.pressure);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    num = num / 100; // bring the value back in line \n    outputMsgs.push({topic:\"Sump\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":570,"y":320,"wires":[["29e9359f.681aaa","70c1e020.bcad9"]]},{"id":"4fa02458.94fe0c","type":"aggregator","z":"e17d6fbc.3278a","name":"","topic":"Ambient","intervalCount":1,"intervalUnits":"h","submitIncompleteInterval":true,"aggregationType":"mean","x":810,"y":120,"wires":[["44fb3011.60d6a","7cd2ad50.c5dcd4"]]},{"id":"2f0943a7.9b913c","type":"ui_chart","z":"e17d6fbc.3278a","name":"","group":"aa1491c8.4885a","order":2,"width":0,"height":0,"label":"Temp (F)","chartType":"line","legend":"false","xformat":"D/M:H","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"52","removeOlderPoints":"","removeOlderUnit":"604800","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":false,"x":1320,"y":140,"wires":[["4a6a37c1.f650e8"],[]]},{"id":"70c1e020.bcad9","type":"aggregator","z":"e17d6fbc.3278a","name":"","topic":"Sump","intervalCount":1,"intervalUnits":"h","submitIncompleteInterval":true,"aggregationType":"mean","x":810,"y":380,"wires":[["ad3932fc.5b286","a2590293.ef72a"]]},{"id":"4a105f7a.d19f1","type":"ui_chart","z":"e17d6fbc.3278a","name":"","group":"98f006bc.69a0c8","order":2,"width":0,"height":0,"label":"Pressure (KPA)","chartType":"line","legend":"false","xformat":"D/M:H","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":"52","removeOlderPoints":"","removeOlderUnit":"604800","cutout":0,"useOneColor":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":false,"x":1340,"y":360,"wires":[["74aaf6ae.7fcec8"],[]]},{"id":"4a6a37c1.f650e8","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":1790,"y":140,"wires":[["48a9fa12.ab8b54"]]},{"id":"48a9fa12.ab8b54","type":"file","z":"e17d6fbc.3278a","name":"","filename":"Temperature.json","appendNewline":true,"createDir":false,"overwriteFile":"true","x":1990,"y":140,"wires":[[]]},{"id":"475fd563.f8a0dc","type":"delay","z":"e17d6fbc.3278a","name":"","pauseType":"rate","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"10","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":true,"x":1620,"y":220,"wires":[["4727069a.5f6138"]]},{"id":"4727069a.5f6138","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":1790,"y":220,"wires":[["4a773e79.b3903"]]},{"id":"4a773e79.b3903","type":"file","z":"e17d6fbc.3278a","name":"","filename":"HourlyTemperature.json","appendNewline":true,"createDir":false,"overwriteFile":"true","x":2010,"y":220,"wires":[[]]},{"id":"b3e70cfc.70199","type":"delay","z":"e17d6fbc.3278a","name":"","pauseType":"rate","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"10","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":true,"x":1620,"y":280,"wires":[["649e5aa4.1d9054"]]},{"id":"649e5aa4.1d9054","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":1790,"y":280,"wires":[["202f4f1e.ee92e"]]},{"id":"202f4f1e.ee92e","type":"file","z":"e17d6fbc.3278a","name":"","filename":"HourlyPressure.json","appendNewline":true,"createDir":false,"overwriteFile":"true","x":2000,"y":280,"wires":[[]]},{"id":"74aaf6ae.7fcec8","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":1790,"y":360,"wires":[["34eab41d.bc074c"]]},{"id":"34eab41d.bc074c","type":"file","z":"e17d6fbc.3278a","name":"","filename":"Pressure.json","appendNewline":true,"createDir":false,"overwriteFile":"true","x":1980,"y":360,"wires":[[]]},{"id":"5671f257.2845dc","type":"file in","z":"e17d6fbc.3278a","name":"","filename":"HourlyTemperature.json","format":"utf8","chunk":false,"sendError":false,"x":610,"y":640,"wires":[["dd7afd7f.1307c"]]},{"id":"dd7afd7f.1307c","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":790,"y":640,"wires":[["7d085b37.cb7824"]]},{"id":"e6bfc404.524928","type":"inject","z":"e17d6fbc.3278a","name":"On Restart","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":true,"onceDelay":0.1,"x":110,"y":660,"wires":[["5671f257.2845dc","f3ba63e.90ee9a","bb8668f4.b723e8","fbed95cb.404b38"]]},{"id":"f3ba63e.90ee9a","type":"file in","z":"e17d6fbc.3278a","name":"","filename":"HourlyPressure.json","format":"utf8","chunk":false,"sendError":false,"x":600,"y":680,"wires":[["e6eec477.0ff748"]]},{"id":"e6eec477.0ff748","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":790,"y":680,"wires":[["29e9359f.681aaa"]]},{"id":"5fd80ff9.59d93","type":"aggregator","z":"e17d6fbc.3278a","name":"","topic":"Sump","intervalCount":1,"intervalUnits":"h","submitIncompleteInterval":true,"aggregationType":"mean","x":810,"y":160,"wires":[["44fb3011.60d6a","d6d43189.e26b4"]]},{"id":"d0a0d204.88eeb","type":"aggregator","z":"e17d6fbc.3278a","name":"","topic":"Ambient","intervalCount":1,"intervalUnits":"h","submitIncompleteInterval":true,"aggregationType":"mean","x":810,"y":340,"wires":[["ad3932fc.5b286","7fc20536.72196c"]]},{"id":"bb8668f4.b723e8","type":"file in","z":"e17d6fbc.3278a","name":"","filename":"Temperature.json","format":"utf8","chunk":false,"sendError":false,"x":590,"y":600,"wires":[["d5961f24.1a93"]]},{"id":"d5961f24.1a93","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":790,"y":600,"wires":[["2f0943a7.9b913c"]]},{"id":"fbed95cb.404b38","type":"file in","z":"e17d6fbc.3278a","name":"","filename":"Pressure.json","format":"utf8","chunk":false,"sendError":false,"x":580,"y":720,"wires":[["8bd29126.5e97f"]]},{"id":"8bd29126.5e97f","type":"json","z":"e17d6fbc.3278a","name":"","property":"payload","action":"","pretty":false,"x":790,"y":720,"wires":[["4a105f7a.d19f1"]]},{"id":"c23ba468.668f88","type":"comment","z":"e17d6fbc.3278a","name":"Chart backup","info":"Allow charts to re-populate after a reboot. More interesting for the long-term charts rather than the hourly charts.","x":110,"y":600,"wires":[]},{"id":"ad3932fc.5b286","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":1090,"y":360,"wires":[["4a105f7a.d19f1"]]},{"id":"44fb3011.60d6a","type":"function","z":"e17d6fbc.3278a","name":"Set Precision","func":"var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;","outputs":1,"noerr":0,"x":1090,"y":140,"wires":[["2f0943a7.9b913c"]]},{"id":"a9faf4fc.6f5248","type":"comment","z":"e17d6fbc.3278a","name":"Set 2 decimal places","info":"Note that this doesn't look at a specific payload value, rather the payload in general. Passes the topic through.","x":1110,"y":100,"wires":[]},{"id":"8bf7a7b.0aed058","type":"comment","z":"e17d6fbc.3278a","name":"Unit (KPA) and 2 digits","info":"Note that this looks for a specific data point from the bmp280, sets the unit (KPA vs PA) and sets the decimal place.","x":600,"y":140,"wires":[]},{"id":"e9b5c07f.73985","type":"csv","z":"e17d6fbc.3278a","name":"","sep":",","hdrin":false,"hdrout":false,"multi":"one","ret":"\\n","temp":"date,payload","skip":"0","x":1790,"y":400,"wires":[["40b3a6e7.83be68"]]},{"id":"40b3a6e7.83be68","type":"file","z":"e17d6fbc.3278a","name":"","filename":"SumpPumpLongTermAveragePressureSump.csv","appendNewline":false,"createDir":false,"overwriteFile":"false","x":2090,"y":400,"wires":[[]]},{"id":"a2590293.ef72a","type":"function","z":"e17d6fbc.3278a","name":"Format CSV","func":"var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;","outputs":1,"noerr":0,"x":1610,"y":400,"wires":[["e9b5c07f.73985"]]},{"id":"a38fcd93.ff67f","type":"csv","z":"e17d6fbc.3278a","name":"","sep":",","hdrin":false,"hdrout":false,"multi":"one","ret":"\\n","temp":"date,payload","skip":"0","x":1790,"y":320,"wires":[["46b55793.840a28"]]},{"id":"46b55793.840a28","type":"file","z":"e17d6fbc.3278a","name":"","filename":"SumpPumpLongTermAveragePressureAmbient.csv","appendNewline":false,"createDir":false,"overwriteFile":"false","x":2090,"y":320,"wires":[[]]},{"id":"7fc20536.72196c","type":"function","z":"e17d6fbc.3278a","name":"Format CSV","func":"var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;","outputs":1,"noerr":0,"x":1610,"y":320,"wires":[["a38fcd93.ff67f"]]},{"id":"d1a6deec.017c4","type":"csv","z":"e17d6fbc.3278a","name":"","sep":",","hdrin":false,"hdrout":false,"multi":"one","ret":"\\n","temp":"date,payload","skip":"0","x":1790,"y":180,"wires":[["c3ae79e9.f2eac8"]]},{"id":"c3ae79e9.f2eac8","type":"file","z":"e17d6fbc.3278a","name":"","filename":"SumpPumpLongTermAverageSumpTemp.csv","appendNewline":false,"createDir":false,"overwriteFile":"false","x":2070,"y":180,"wires":[[]]},{"id":"d6d43189.e26b4","type":"function","z":"e17d6fbc.3278a","name":"Format CSV","func":"var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;","outputs":1,"noerr":0,"x":1610,"y":180,"wires":[["d1a6deec.017c4"]]},{"id":"4b9aedb1.349d94","type":"csv","z":"e17d6fbc.3278a","name":"","sep":",","hdrin":false,"hdrout":false,"multi":"one","ret":"\\n","temp":"date,payload","skip":"0","x":1790,"y":100,"wires":[["9f697d7f.83171"]]},{"id":"9f697d7f.83171","type":"file","z":"e17d6fbc.3278a","name":"","filename":"SumpPumpLongTermAverageSumpAmbientTemp.csv","appendNewline":false,"createDir":false,"overwriteFile":"false","x":2100,"y":100,"wires":[[]]},{"id":"7cd2ad50.c5dcd4","type":"function","z":"e17d6fbc.3278a","name":"Format CSV","func":"var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;","outputs":1,"noerr":0,"x":1610,"y":100,"wires":[["4b9aedb1.349d94"]]},{"id":"3660d328.f3bbbc","type":"dropbox out","z":"878c1f9a.52d41","dropbox":"57f7756b.a9b5ec","filename":"SumpPumpLongTermAverageSumpAmbientTemp.csv","localFilename":"/home/pi/SumpPumpLongTermAverageSumpAmbientTemp.csv","name":"","x":700,"y":160,"wires":[]},{"id":"32686849.c016b8","type":"inject","z":"878c1f9a.52d41","name":"Daily","topic":"","payload":"","payloadType":"date","repeat":"86400","crontab":"","once":true,"onceDelay":"60","x":130,"y":160,"wires":[["3660d328.f3bbbc","602bcfba.7317","12be750c.732d4b","62ff6d38.340354"]]},{"id":"d9bcdfbb.8f10c","type":"dropbox out","z":"878c1f9a.52d41","dropbox":"57f7756b.a9b5ec","filename":"SumpPumpLongTermAverageSumpTemp.csv","localFilename":"/home/pi/SumpPumpLongTermAverageSumpTemp.csv","name":"","x":670,"y":200,"wires":[]},{"id":"602bcfba.7317","type":"delay","z":"878c1f9a.52d41","name":"","pauseType":"delay","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"x":360,"y":200,"wires":[["d9bcdfbb.8f10c"]]},{"id":"75767cb.d3be384","type":"dropbox out","z":"878c1f9a.52d41","dropbox":"57f7756b.a9b5ec","filename":"SumpPumpLongTermAveragePressureSump.csv","localFilename":"/home/pi/SumpPumpLongTermAveragePressureSump.csv","name":"","x":690,"y":240,"wires":[]},{"id":"12be750c.732d4b","type":"delay","z":"878c1f9a.52d41","name":"","pauseType":"delay","timeout":"10","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"x":360,"y":240,"wires":[["75767cb.d3be384"]]},{"id":"eb8ae5fc.dc70a8","type":"dropbox out","z":"878c1f9a.52d41","dropbox":"57f7756b.a9b5ec","filename":"SumpPumpLongTermAveragePressureAmbient.csv","localFilename":"/home/pi/SumpPumpLongTermAveragePressureAmbient.csv","name":"","x":690,"y":280,"wires":[]},{"id":"62ff6d38.340354","type":"delay","z":"878c1f9a.52d41","name":"","pauseType":"delay","timeout":"15","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"x":360,"y":280,"wires":[["eb8ae5fc.dc70a8"]]}]
+[
+    {
+        "id": "e17d6fbc.3278a",
+        "type": "tab",
+        "label": "Sump",
+        "disabled": false,
+        "info": "Sump pump monitoring and display"
+    },
+    {
+        "id": "878c1f9a.52d41",
+        "type": "tab",
+        "label": "Backup",
+        "disabled": false,
+        "info": "Save the captured csv files out to dropbox daily."
+    },
+    {
+        "id": "7d7d7629.7b8f98",
+        "type": "tab",
+        "label": "CPU Monitoring",
+        "disabled": false,
+        "info": "Processor and resource monitoring."
+    },
+    {
+        "id": "5c2a7bbf.91c7f4",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Computer",
+        "icon": "computer",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d4971c1d.ee396",
+        "type": "ui_group",
+        "z": "",
+        "name": "Memory",
+        "tab": "5c2a7bbf.91c7f4",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "60c15651.e10928",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Sump Pump",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "aa1491c8.4885a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temperature (F)",
+        "tab": "49a420dc.938ee",
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "49a420dc.938ee",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Sump",
+        "icon": "trending_up",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "489c2c24.01be04",
+        "type": "ui_group",
+        "z": "",
+        "name": "Commands",
+        "tab": "5c2a7bbf.91c7f4",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2621a588.cddb7a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Processor",
+        "tab": "5c2a7bbf.91c7f4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "98f006bc.69a0c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Pressure",
+        "tab": "49a420dc.938ee",
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "3fedbc7a.18f394",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Temperature",
+        "icon": "timeline",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8aae7fee.6ebaa",
+        "type": "ui_tab",
+        "z": "",
+        "name": "RPi Control",
+        "icon": "computer",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "57f7756b.a9b5ec",
+        "type": "dropbox-config",
+        "z": "",
+        "name": "Node-Red IOT"
+    },
+    {
+        "id": "578381cc.a254c",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "RPi Temp.",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "689af081.022e1"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2503e08.a8c7a2",
+        "type": "inject",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "578381cc.a254c",
+                "c04ea477.99c6e8",
+                "83afe701.9102a8"
+            ]
+        ]
+    },
+    {
+        "id": "689af081.022e1",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 160,
+        "wires": [
+            [
+                "20df8a89.c57f06",
+                "9e30bf7a.c5e95"
+            ]
+        ]
+    },
+    {
+        "id": "deded38b.bf53c",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Reboot",
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "420f0f1c.1c6b6",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "sudo shutdown -h now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Shutdown",
+        "x": 357,
+        "y": 629,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c04ea477.99c6e8",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "CPU Load",
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "c51f53fd.190b5",
+                "55dabe6b.b2bf"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "83afe701.9102a8",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Free Memory",
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "418c280a.1e7e18",
+                "af1abfc4.3fc03",
+                "3d9ef38a.e251bc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e4b83e50.dac04",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "df -h | grep \"root\"|  awk -F' ' '{print $5}' | tr % \" \"",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Disk Usage",
+        "x": 365,
+        "y": 389,
+        "wires": [
+            [
+                "bbc45a31.4dced8",
+                "c08b278.e86ecd8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "37250380.d2293c",
+        "type": "inject",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "e4b83e50.dac04"
+            ]
+        ]
+    },
+    {
+        "id": "3d9ef38a.e251bc",
+        "type": "debug",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 890,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "164e284e.3f98d8",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "sudo apt-get -qq update; sudo apt-get -qq upgrade -y; cd ~/.node-red/; npm update --quiet",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Update",
+        "x": 358,
+        "y": 703,
+        "wires": [
+            [
+                "f198ade4.d1a5f",
+                "f7c2ec57.504ff"
+            ],
+            [
+                "f198ade4.d1a5f"
+            ],
+            [
+                "f198ade4.d1a5f"
+            ]
+        ]
+    },
+    {
+        "id": "f198ade4.d1a5f",
+        "type": "debug",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 767,
+        "y": 709,
+        "wires": []
+    },
+    {
+        "id": "fb344d1.5eaccb",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 122,
+        "y": 560,
+        "wires": [
+            [
+                "deded38b.bf53c"
+            ]
+        ]
+    },
+    {
+        "id": "547f0f7f.db18c",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Update Packages",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 152,
+        "y": 700,
+        "wires": [
+            [
+                "164e284e.3f98d8"
+            ]
+        ]
+    },
+    {
+        "id": "a53d88fd.63e4b8",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 112,
+        "y": 660,
+        "wires": [
+            [
+                "f7c2ec57.504ff"
+            ]
+        ]
+    },
+    {
+        "id": "f7c2ec57.504ff",
+        "type": "ui_text",
+        "z": "7d7d7629.7b8f98",
+        "group": "489c2c24.01be04",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Messages:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 767,
+        "y": 669,
+        "wires": []
+    },
+    {
+        "id": "20df8a89.c57f06",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "2621a588.cddb7a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c51f53fd.190b5",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "2621a588.cddb7a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Processor",
+        "label": "CPU",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 880,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "418c280a.1e7e18",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "d4971c1d.ee396",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Free Memory % (used/free)",
+        "label": "RAM",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 940,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bbc45a31.4dced8",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "d4971c1d.ee396",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Disk Now",
+        "label": "Usage",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 880,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "be77e23a.385c4",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "2621a588.cddb7a",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": true,
+        "x": 870,
+        "y": 200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "af1abfc4.3fc03",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "d4971c1d.ee396",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": true,
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "13238a13.102676",
+        "type": "inject",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "",
+        "payload": "measure",
+        "payloadType": "str",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "6810c127.e540a",
+                "f7166df6.616b1"
+            ]
+        ]
+    },
+    {
+        "id": "6810c127.e540a",
+        "type": "bmp280",
+        "z": "e17d6fbc.3278a",
+        "name": "bmp280 Sump",
+        "topic": "Sump",
+        "address": 119,
+        "powermode": 1,
+        "tresolution": "32",
+        "presolution": "4",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "7f954b3b.9e1614",
+                "60c5a0d8.c7119"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7d085b37.cb7824",
+        "type": "ui_chart",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "group": "aa1491c8.4885a",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Temp Last Hour (F)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1350,
+        "y": 220,
+        "wires": [
+            [
+                "475fd563.f8a0dc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f954b3b.9e1614",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.temperatureF);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    //msg.payload.temperatureF = num.toFixed(2); \n    outputMsgs.push({topic:\"Ambient\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "7d085b37.cb7824",
+                "4fa02458.94fe0c"
+            ]
+        ]
+    },
+    {
+        "id": "60c5a0d8.c7119",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.pressure);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    num = num / 100; // bring the value back in line \n    outputMsgs.push({topic:\"Ambient\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "29e9359f.681aaa",
+                "d0a0d204.88eeb"
+            ]
+        ]
+    },
+    {
+        "id": "29e9359f.681aaa",
+        "type": "ui_chart",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "group": "98f006bc.69a0c8",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Pressure Last Hour (KPA)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1370,
+        "y": 280,
+        "wires": [
+            [
+                "b3e70cfc.70199"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f7166df6.616b1",
+        "type": "bmp280",
+        "z": "e17d6fbc.3278a",
+        "name": "bmp280 Ambient",
+        "topic": "Ambient",
+        "address": "118",
+        "powermode": 1,
+        "tresolution": "32",
+        "presolution": "4",
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "804606cf.bdfa18",
+                "4c709e78.42002"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "804606cf.bdfa18",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.temperatureF);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    //msg.payload.temperatureF = num.toFixed(2); \n    outputMsgs.push({topic:\"Sump\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "7d085b37.cb7824",
+                "5fd80ff9.59d93"
+            ]
+        ]
+    },
+    {
+        "id": "4c709e78.42002",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload.pressure);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    num = num / 100; // bring the value back in line \n    outputMsgs.push({topic:\"Sump\",payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "29e9359f.681aaa",
+                "70c1e020.bcad9"
+            ]
+        ]
+    },
+    {
+        "id": "4fa02458.94fe0c",
+        "type": "aggregator",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "Ambient",
+        "intervalCount": 1,
+        "intervalUnits": "h",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 810,
+        "y": 120,
+        "wires": [
+            [
+                "44fb3011.60d6a",
+                "7cd2ad50.c5dcd4"
+            ]
+        ]
+    },
+    {
+        "id": "2f0943a7.9b913c",
+        "type": "ui_chart",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "group": "aa1491c8.4885a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temp (F)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "D/M:H",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "52",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1320,
+        "y": 140,
+        "wires": [
+            [
+                "4a6a37c1.f650e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "70c1e020.bcad9",
+        "type": "aggregator",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "Sump",
+        "intervalCount": 1,
+        "intervalUnits": "h",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "ad3932fc.5b286",
+                "a2590293.ef72a"
+            ]
+        ]
+    },
+    {
+        "id": "4a105f7a.d19f1",
+        "type": "ui_chart",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "group": "98f006bc.69a0c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Pressure (KPA)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "D/M:H",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "52",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1340,
+        "y": 360,
+        "wires": [
+            [
+                "74aaf6ae.7fcec8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4a6a37c1.f650e8",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1790,
+        "y": 140,
+        "wires": [
+            [
+                "48a9fa12.ab8b54"
+            ]
+        ]
+    },
+    {
+        "id": "48a9fa12.ab8b54",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "Temperature.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1990,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "475fd563.f8a0dc",
+        "type": "delay",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1620,
+        "y": 220,
+        "wires": [
+            [
+                "4727069a.5f6138"
+            ]
+        ]
+    },
+    {
+        "id": "4727069a.5f6138",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1790,
+        "y": 220,
+        "wires": [
+            [
+                "4a773e79.b3903"
+            ]
+        ]
+    },
+    {
+        "id": "4a773e79.b3903",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "HourlyTemperature.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 2010,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3e70cfc.70199",
+        "type": "delay",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1620,
+        "y": 280,
+        "wires": [
+            [
+                "649e5aa4.1d9054"
+            ]
+        ]
+    },
+    {
+        "id": "649e5aa4.1d9054",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1790,
+        "y": 280,
+        "wires": [
+            [
+                "202f4f1e.ee92e"
+            ]
+        ]
+    },
+    {
+        "id": "202f4f1e.ee92e",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "HourlyPressure.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 2000,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74aaf6ae.7fcec8",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1790,
+        "y": 360,
+        "wires": [
+            [
+                "34eab41d.bc074c"
+            ]
+        ]
+    },
+    {
+        "id": "34eab41d.bc074c",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "Pressure.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1980,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5671f257.2845dc",
+        "type": "file in",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "HourlyTemperature.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 610,
+        "y": 640,
+        "wires": [
+            [
+                "dd7afd7f.1307c"
+            ]
+        ]
+    },
+    {
+        "id": "dd7afd7f.1307c",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 640,
+        "wires": [
+            [
+                "7d085b37.cb7824"
+            ]
+        ]
+    },
+    {
+        "id": "e6bfc404.524928",
+        "type": "inject",
+        "z": "e17d6fbc.3278a",
+        "name": "On Restart",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "5671f257.2845dc",
+                "f3ba63e.90ee9a",
+                "bb8668f4.b723e8",
+                "fbed95cb.404b38"
+            ]
+        ]
+    },
+    {
+        "id": "f3ba63e.90ee9a",
+        "type": "file in",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "HourlyPressure.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 600,
+        "y": 680,
+        "wires": [
+            [
+                "e6eec477.0ff748"
+            ]
+        ]
+    },
+    {
+        "id": "e6eec477.0ff748",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [
+                "29e9359f.681aaa"
+            ]
+        ]
+    },
+    {
+        "id": "5fd80ff9.59d93",
+        "type": "aggregator",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "Sump",
+        "intervalCount": 1,
+        "intervalUnits": "h",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "44fb3011.60d6a",
+                "d6d43189.e26b4"
+            ]
+        ]
+    },
+    {
+        "id": "d0a0d204.88eeb",
+        "type": "aggregator",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "Ambient",
+        "intervalCount": 1,
+        "intervalUnits": "h",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "ad3932fc.5b286",
+                "7fc20536.72196c"
+            ]
+        ]
+    },
+    {
+        "id": "bb8668f4.b723e8",
+        "type": "file in",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "Temperature.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 590,
+        "y": 600,
+        "wires": [
+            [
+                "d5961f24.1a93"
+            ]
+        ]
+    },
+    {
+        "id": "d5961f24.1a93",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "2f0943a7.9b913c"
+            ]
+        ]
+    },
+    {
+        "id": "fbed95cb.404b38",
+        "type": "file in",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "Pressure.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 580,
+        "y": 720,
+        "wires": [
+            [
+                "8bd29126.5e97f"
+            ]
+        ]
+    },
+    {
+        "id": "8bd29126.5e97f",
+        "type": "json",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 720,
+        "wires": [
+            [
+                "4a105f7a.d19f1"
+            ]
+        ]
+    },
+    {
+        "id": "c23ba468.668f88",
+        "type": "comment",
+        "z": "e17d6fbc.3278a",
+        "name": "Chart backup",
+        "info": "Allow charts to re-populate after a reboot. More interesting for the long-term charts rather than the hourly charts.",
+        "x": 110,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ad3932fc.5b286",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1090,
+        "y": 360,
+        "wires": [
+            [
+                "4a105f7a.d19f1"
+            ]
+        ]
+    },
+    {
+        "id": "44fb3011.60d6a",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1090,
+        "y": 140,
+        "wires": [
+            [
+                "2f0943a7.9b913c"
+            ]
+        ]
+    },
+    {
+        "id": "a9faf4fc.6f5248",
+        "type": "comment",
+        "z": "e17d6fbc.3278a",
+        "name": "Set 2 decimal places",
+        "info": "Note that this doesn't look at a specific payload value, rather the payload in general. Passes the topic through.",
+        "x": 1110,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8bf7a7b.0aed058",
+        "type": "comment",
+        "z": "e17d6fbc.3278a",
+        "name": "Unit (KPA) and 2 digits",
+        "info": "Note that this looks for a specific data point from the bmp280, sets the unit (KPA vs PA) and sets the decimal place.",
+        "x": 600,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e9b5c07f.73985",
+        "type": "csv",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "date,payload",
+        "skip": "0",
+        "x": 1790,
+        "y": 400,
+        "wires": [
+            [
+                "40b3a6e7.83be68"
+            ]
+        ]
+    },
+    {
+        "id": "40b3a6e7.83be68",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "SumpPumpLongTermAveragePressureSump.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 2090,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2590293.ef72a",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Format CSV",
+        "func": "var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1610,
+        "y": 400,
+        "wires": [
+            [
+                "e9b5c07f.73985"
+            ]
+        ]
+    },
+    {
+        "id": "a38fcd93.ff67f",
+        "type": "csv",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "date,payload",
+        "skip": "0",
+        "x": 1790,
+        "y": 320,
+        "wires": [
+            [
+                "46b55793.840a28"
+            ]
+        ]
+    },
+    {
+        "id": "46b55793.840a28",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "SumpPumpLongTermAveragePressureAmbient.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 2090,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7fc20536.72196c",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Format CSV",
+        "func": "var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1610,
+        "y": 320,
+        "wires": [
+            [
+                "a38fcd93.ff67f"
+            ]
+        ]
+    },
+    {
+        "id": "d1a6deec.017c4",
+        "type": "csv",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "date,payload",
+        "skip": "0",
+        "x": 1790,
+        "y": 180,
+        "wires": [
+            [
+                "c3ae79e9.f2eac8"
+            ]
+        ]
+    },
+    {
+        "id": "c3ae79e9.f2eac8",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "SumpPumpLongTermAverageSumpTemp.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 2070,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6d43189.e26b4",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Format CSV",
+        "func": "var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1610,
+        "y": 180,
+        "wires": [
+            [
+                "d1a6deec.017c4"
+            ]
+        ]
+    },
+    {
+        "id": "4b9aedb1.349d94",
+        "type": "csv",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": false,
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "date,payload",
+        "skip": "0",
+        "x": 1790,
+        "y": 100,
+        "wires": [
+            [
+                "9f697d7f.83171"
+            ]
+        ]
+    },
+    {
+        "id": "9f697d7f.83171",
+        "type": "file",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "filename": "SumpPumpLongTermAverageSumpAmbientTemp.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 2100,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cd2ad50.c5dcd4",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "Format CSV",
+        "func": "var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.date = new Date().toString();\nnewPayload.topic = msg.topic;\nnewPayload.payload = originalPayload.toFixed(2);\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1610,
+        "y": 100,
+        "wires": [
+            [
+                "4b9aedb1.349d94"
+            ]
+        ]
+    },
+    {
+        "id": "3660d328.f3bbbc",
+        "type": "dropbox out",
+        "z": "878c1f9a.52d41",
+        "dropbox": "57f7756b.a9b5ec",
+        "filename": "SumpPumpLongTermAverageSumpAmbientTemp.csv",
+        "localFilename": "/home/pi/SumpPumpLongTermAverageSumpAmbientTemp.csv",
+        "name": "",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "32686849.c016b8",
+        "type": "inject",
+        "z": "878c1f9a.52d41",
+        "name": "Daily",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "86400",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "60",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "3660d328.f3bbbc",
+                "602bcfba.7317",
+                "12be750c.732d4b",
+                "62ff6d38.340354"
+            ]
+        ]
+    },
+    {
+        "id": "d9bcdfbb.8f10c",
+        "type": "dropbox out",
+        "z": "878c1f9a.52d41",
+        "dropbox": "57f7756b.a9b5ec",
+        "filename": "SumpPumpLongTermAverageSumpTemp.csv",
+        "localFilename": "/home/pi/SumpPumpLongTermAverageSumpTemp.csv",
+        "name": "",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "602bcfba.7317",
+        "type": "delay",
+        "z": "878c1f9a.52d41",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "d9bcdfbb.8f10c"
+            ]
+        ]
+    },
+    {
+        "id": "75767cb.d3be384",
+        "type": "dropbox out",
+        "z": "878c1f9a.52d41",
+        "dropbox": "57f7756b.a9b5ec",
+        "filename": "SumpPumpLongTermAveragePressureSump.csv",
+        "localFilename": "/home/pi/SumpPumpLongTermAveragePressureSump.csv",
+        "name": "",
+        "x": 690,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "12be750c.732d4b",
+        "type": "delay",
+        "z": "878c1f9a.52d41",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "75767cb.d3be384"
+            ]
+        ]
+    },
+    {
+        "id": "eb8ae5fc.dc70a8",
+        "type": "dropbox out",
+        "z": "878c1f9a.52d41",
+        "dropbox": "57f7756b.a9b5ec",
+        "filename": "SumpPumpLongTermAveragePressureAmbient.csv",
+        "localFilename": "/home/pi/SumpPumpLongTermAveragePressureAmbient.csv",
+        "name": "",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "62ff6d38.340354",
+        "type": "delay",
+        "z": "878c1f9a.52d41",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "eb8ae5fc.dc70a8"
+            ]
+        ]
+    },
+    {
+        "id": "c08b278.e86ecd8",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "d4971c1d.ee396",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Disk Month",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": true,
+        "x": 895,
+        "y": 431,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "149bf498.1617cb",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "2621a588.cddb7a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": true,
+        "x": 870,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "55dabe6b.b2bf",
+        "type": "aggregator",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "intervalCount": 1,
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "149bf498.1617cb"
+            ]
+        ]
+    },
+    {
+        "id": "9e30bf7a.c5e95",
+        "type": "aggregator",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "intervalCount": 1,
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [
+                "be77e23a.385c4"
+            ]
+        ]
+    }
+]
