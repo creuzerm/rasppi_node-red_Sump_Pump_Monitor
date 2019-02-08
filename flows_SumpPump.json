@@ -336,7 +336,7 @@
         "wires": [
             [
                 "c51f53fd.190b5",
-                "149bf498.1617cb"
+                "e4e0b482.124c48"
             ],
             [],
             []
@@ -358,7 +358,7 @@
         "wires": [
             [
                 "418c280a.1e7e18",
-                "af1abfc4.3fc03",
+                "2d51f04d.374cc",
                 "3d9ef38a.e251bc"
             ],
             [],
@@ -2208,8 +2208,8 @@
         "wires": [
             [
                 "e6661847.2931a8",
-                "d6ac486.b2de2b8",
-                "a9ecdf55.a0296"
+                "a9ecdf55.a0296",
+                "4bc6353e.182c1c"
             ]
         ]
     },
@@ -2395,6 +2395,60 @@
         "wires": [
             [
                 "7c084453.b270ac"
+            ]
+        ]
+    },
+    {
+        "id": "2d51f04d.374cc",
+        "type": "aggregator",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "intervalCount": 1,
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "af1abfc4.3fc03"
+            ]
+        ]
+    },
+    {
+        "id": "4bc6353e.182c1c",
+        "type": "aggregator",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "intervalCount": 1,
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "d6ac486.b2de2b8"
+            ]
+        ]
+    },
+    {
+        "id": "e4e0b482.124c48",
+        "type": "aggregator",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "topic": "",
+        "intervalCount": 1,
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "mean",
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "149bf498.1617cb"
             ]
         ]
     }
