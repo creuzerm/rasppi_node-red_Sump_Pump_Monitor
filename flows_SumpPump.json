@@ -215,6 +215,24 @@
         "name": "Node-Red IOT"
     },
     {
+        "id": "f097e450.bded08",
+        "type": "ui_group",
+        "z": "",
+        "name": "WiFi",
+        "tab": "5c2a7bbf.91c7f4",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4b04bc55.0d4ce4",
+        "type": "googlehome-config-node",
+        "z": "",
+        "ipaddress": "192.168.86.22",
+        "name": "Kitchen Google Home",
+        "language": "en"
+    },
+    {
         "id": "578381cc.a254c",
         "type": "exec",
         "z": "7d7d7629.7b8f98",
@@ -253,7 +271,8 @@
             [
                 "578381cc.a254c",
                 "c04ea477.99c6e8",
-                "83afe701.9102a8"
+                "83afe701.9102a8",
+                "e52fcdad.4a8c6"
             ]
         ]
     },
@@ -285,8 +304,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Reboot",
-        "x": 360,
-        "y": 780,
+        "x": 380,
+        "y": 960,
         "wires": [
             [],
             [],
@@ -304,8 +323,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Shutdown",
-        "x": 357,
-        "y": 849,
+        "x": 377,
+        "y": 1029,
         "wires": [
             [],
             [],
@@ -367,8 +386,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Disk Usage",
-        "x": 365,
-        "y": 389,
+        "x": 370,
+        "y": 500,
         "wires": [
             [
                 "bbc45a31.4dced8",
@@ -390,8 +409,8 @@
         "crontab": "",
         "once": true,
         "onceDelay": "",
-        "x": 150,
-        "y": 380,
+        "x": 155,
+        "y": 491,
         "wires": [
             [
                 "e4b83e50.dac04"
@@ -421,8 +440,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Update",
-        "x": 358,
-        "y": 703,
+        "x": 378,
+        "y": 883,
         "wires": [
             [
                 "f198ade4.d1a5f",
@@ -444,8 +463,8 @@
         "active": true,
         "console": "false",
         "complete": "false",
-        "x": 767,
-        "y": 709,
+        "x": 787,
+        "y": 889,
         "wires": []
     },
     {
@@ -466,8 +485,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 122,
-        "y": 780,
+        "x": 142,
+        "y": 960,
         "wires": [
             [
                 "deded38b.bf53c"
@@ -492,8 +511,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 152,
-        "y": 700,
+        "x": 172,
+        "y": 880,
         "wires": [
             [
                 "164e284e.3f98d8"
@@ -518,8 +537,8 @@
         "payload": " ",
         "payloadType": "str",
         "topic": "",
-        "x": 112,
-        "y": 660,
+        "x": 132,
+        "y": 840,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -538,8 +557,8 @@
         "label": "Messages:",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 767,
-        "y": 669,
+        "x": 787,
+        "y": 849,
         "wires": []
     },
     {
@@ -642,8 +661,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 880,
-        "y": 400,
+        "x": 885,
+        "y": 511,
         "wires": []
     },
     {
@@ -827,8 +846,7 @@
         "y": 180,
         "wires": [
             [
-                "7d085b37.cb7824",
-                "4fa02458.94fe0c"
+                "c01da0e5.c90dc"
             ]
         ]
     },
@@ -845,7 +863,8 @@
         "wires": [
             [
                 "29e9359f.681aaa",
-                "d0a0d204.88eeb"
+                "d0a0d204.88eeb",
+                "4da50971.8161a8"
             ]
         ]
     },
@@ -1877,8 +1896,8 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 890,
-        "y": 440,
+        "x": 895,
+        "y": 551,
         "wires": [
             [],
             []
@@ -1955,8 +1974,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Disk Usage",
-        "x": 370,
-        "y": 580,
+        "x": 390,
+        "y": 760,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -1976,8 +1995,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Free Memory",
-        "x": 370,
-        "y": 520,
+        "x": 390,
+        "y": 700,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2004,8 +2023,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 120,
-        "y": 520,
+        "x": 140,
+        "y": 700,
         "wires": [
             [
                 "4b19effc.6269e"
@@ -2030,11 +2049,362 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 110,
-        "y": 580,
+        "x": 130,
+        "y": 760,
         "wires": [
             [
                 "1a0e55b0.e3476a"
+            ]
+        ]
+    },
+    {
+        "id": "a2f3904b.f40ef",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "iwconfig wlan0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Wifi",
+        "x": 370,
+        "y": 640,
+        "wires": [
+            [
+                "f7c2ec57.504ff"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a67012f0.50076",
+        "type": "ui_button",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "489c2c24.01be04",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "wlan0",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 640,
+        "wires": [
+            [
+                "a2f3904b.f40ef"
+            ]
+        ]
+    },
+    {
+        "id": "e52fcdad.4a8c6",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "iwconfig wlan0 | grep -i --color quality",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Wifi",
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "57d1608c.8e989"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e6661847.2931a8",
+        "type": "debug",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 890,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a9ecdf55.a0296",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "f097e450.bded08",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Wifi",
+        "label": "RAM",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#008000",
+            "#e6e600",
+            "#800000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 870,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d6ac486.b2de2b8",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "f097e450.bded08",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": true,
+        "x": 870,
+        "y": 460,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "57d1608c.8e989",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "func": "var regex = /.*([0-9][0-9])\\/([0-9][0-9]).*(-[0-9][0-9]).*/i;\n\nvar result = regex.exec(msg.payload);\n//node.warn(JSON.stringify(result));\nmsg.payload = result[1];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 420,
+        "wires": [
+            [
+                "e6661847.2931a8",
+                "d6ac486.b2de2b8",
+                "a9ecdf55.a0296"
+            ]
+        ]
+    },
+    {
+        "id": "4da50971.8161a8",
+        "type": "rbe",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "func": "deadband",
+        "gap": ".2",
+        "start": "",
+        "inout": "in",
+        "property": "payload",
+        "x": 760,
+        "y": 460,
+        "wires": [
+            [
+                "b6d4a185.34788",
+                "c90185b8.f2bee8",
+                "3ed9ba03.ef9886"
+            ]
+        ]
+    },
+    {
+        "id": "b6d4a185.34788",
+        "type": "debug",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1130,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c90185b8.f2bee8",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "func": "msg.payload = 'measure';\n\nfor (i = 0; i < 10*60; i++)  // every second for 10 minutes\n{\n    node.send(msg);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 760,
+        "y": 520,
+        "wires": [
+            [
+                "5b25d9c1.a870a8"
+            ]
+        ]
+    },
+    {
+        "id": "5b25d9c1.a870a8",
+        "type": "delay",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 910,
+        "y": 520,
+        "wires": [
+            [
+                "b6d4a185.34788",
+                "6810c127.e540a"
+            ]
+        ]
+    },
+    {
+        "id": "c01da0e5.c90dc",
+        "type": "delay",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 650,
+        "y": 60,
+        "wires": [
+            [
+                "4fa02458.94fe0c",
+                "7d085b37.cb7824"
+            ]
+        ]
+    },
+    {
+        "id": "ef88aa88.af8a28",
+        "type": "inject",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "c90185b8.f2bee8"
+            ]
+        ]
+    },
+    {
+        "id": "3ed9ba03.ef9886",
+        "type": "delay",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "hour",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1170,
+        "y": 520,
+        "wires": [
+            [
+                "9c7b96c3.ac7a68"
+            ]
+        ]
+    },
+    {
+        "id": "9c7b96c3.ac7a68",
+        "type": "googlehome-notify",
+        "z": "e17d6fbc.3278a",
+        "server": "4b04bc55.0d4ce4",
+        "name": "",
+        "x": 1500,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7c084453.b270ac",
+        "type": "function",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "func": "msg.payload = 'The Sump Pump appears to be running today';\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1314.12841796875,
+        "y": 520.0104370117188,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7427a37.975bb8",
+        "type": "inject",
+        "z": "e17d6fbc.3278a",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 1160,
+        "y": 560,
+        "wires": [
+            [
+                "7c084453.b270ac"
             ]
         ]
     }
