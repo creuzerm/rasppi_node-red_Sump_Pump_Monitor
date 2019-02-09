@@ -9,7 +9,7 @@
     {
         "id": "878c1f9a.52d41",
         "type": "tab",
-        "label": "Backup",
+        "label": "Dropbox Backup",
         "disabled": false,
         "info": "Save the captured csv files out to dropbox daily."
     },
@@ -18,7 +18,7 @@
         "type": "tab",
         "label": "CPU Monitoring",
         "disabled": false,
-        "info": "Processor and resource monitoring."
+        "info": "Processor and resource monitoring.\n\nThis gets copied and pasted around a lot, so lets keep all the pieces in this flow.\n\nLocal caching of chart data is write limited to help protect the SD card. 10 minutes between writes. Uses links for refreshing the charts on restart for ease of reading the useful flows."
     },
     {
         "id": "5c2a7bbf.91c7f4",
@@ -26,6 +26,7 @@
         "z": "",
         "name": "Computer",
         "icon": "computer",
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -152,7 +153,7 @@
         "z": "",
         "name": "Sump",
         "icon": "trending_up",
-        "order": 2,
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -223,6 +224,16 @@
         "height": "2"
     },
     {
+        "id": "fce9b142.f487b",
+        "type": "ui_link",
+        "z": "",
+        "name": "Shower",
+        "link": "http://192.168.86.25:1880/ui/#/0",
+        "icon": "open_in_browser",
+        "target": "newtab",
+        "order": 3
+    },
+    {
         "id": "578381cc.a254c",
         "type": "exec",
         "z": "7d7d7629.7b8f98",
@@ -247,7 +258,7 @@
         "id": "2503e08.a8c7a2",
         "type": "inject",
         "z": "7d7d7629.7b8f98",
-        "name": "",
+        "name": "Every Ten Seconds",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -255,7 +266,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": "",
-        "x": 150,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -270,11 +281,11 @@
         "id": "689af081.022e1",
         "type": "function",
         "z": "7d7d7629.7b8f98",
-        "name": "",
+        "name": "Get Value",
         "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 550,
+        "x": 560,
         "y": 160,
         "wires": [
             [
@@ -294,8 +305,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Reboot",
-        "x": 380,
-        "y": 960,
+        "x": 360,
+        "y": 940,
         "wires": [
             [],
             [],
@@ -313,8 +324,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Shutdown",
-        "x": 377,
-        "y": 1029,
+        "x": 357,
+        "y": 1009,
         "wires": [
             [],
             [],
@@ -357,9 +368,9 @@
         "y": 300,
         "wires": [
             [
-                "418c280a.1e7e18",
                 "2d51f04d.374cc",
-                "3d9ef38a.e251bc"
+                "3d9ef38a.e251bc",
+                "33231fef.768e8"
             ],
             [],
             []
@@ -391,7 +402,7 @@
         "id": "37250380.d2293c",
         "type": "inject",
         "z": "7d7d7629.7b8f98",
-        "name": "",
+        "name": "Every Hour",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -399,8 +410,8 @@
         "crontab": "",
         "once": true,
         "onceDelay": "",
-        "x": 155,
-        "y": 491,
+        "x": 110,
+        "y": 500,
         "wires": [
             [
                 "e4b83e50.dac04"
@@ -415,7 +426,7 @@
         "active": false,
         "console": "false",
         "complete": "false",
-        "x": 890,
+        "x": 1110,
         "y": 260,
         "wires": []
     },
@@ -430,8 +441,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Update",
-        "x": 378,
-        "y": 883,
+        "x": 358,
+        "y": 863,
         "wires": [
             [
                 "f198ade4.d1a5f",
@@ -454,7 +465,7 @@
         "console": "false",
         "complete": "false",
         "x": 787,
-        "y": 889,
+        "y": 869,
         "wires": []
     },
     {
@@ -475,8 +486,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 142,
-        "y": 960,
+        "x": 100,
+        "y": 940,
         "wires": [
             [
                 "deded38b.bf53c"
@@ -501,8 +512,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 172,
-        "y": 880,
+        "x": 130,
+        "y": 860,
         "wires": [
             [
                 "164e284e.3f98d8"
@@ -527,8 +538,8 @@
         "payload": " ",
         "payloadType": "str",
         "topic": "",
-        "x": 132,
-        "y": 840,
+        "x": 90,
+        "y": 820,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -548,7 +559,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "x": 767,
-        "y": 849,
+        "y": 829,
         "wires": []
     },
     {
@@ -573,7 +584,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 910,
+        "x": 1130,
         "y": 160,
         "wires": []
     },
@@ -599,7 +610,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 880,
+        "x": 1100,
         "y": 60,
         "wires": []
     },
@@ -625,7 +636,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 910,
+        "x": 1130,
         "y": 300,
         "wires": []
     },
@@ -651,8 +662,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 885,
-        "y": 511,
+        "x": 1100,
+        "y": 520,
         "wires": []
     },
     {
@@ -690,10 +701,12 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 870,
+        "x": 1090,
         "y": 200,
         "wires": [
-            [],
+            [
+                "5b1fa351.664b8c"
+            ],
             []
         ]
     },
@@ -732,10 +745,12 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 870,
+        "x": 1090,
         "y": 340,
         "wires": [
-            [],
+            [
+                "bcea357b.87dd48"
+            ],
             []
         ]
     },
@@ -1886,10 +1901,12 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 895,
-        "y": 551,
+        "x": 1110,
+        "y": 560,
         "wires": [
-            [],
+            [
+                "9e57e6e7.dc2938"
+            ],
             []
         ]
     },
@@ -1928,10 +1945,12 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 870,
+        "x": 1090,
         "y": 100,
         "wires": [
-            [],
+            [
+                "724252f.8d7ebac"
+            ],
             []
         ]
     },
@@ -1949,7 +1968,7 @@
         "y": 200,
         "wires": [
             [
-                "be77e23a.385c4"
+                "408c379c.7efd38"
             ]
         ]
     },
@@ -1964,8 +1983,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Disk Usage",
-        "x": 390,
-        "y": 760,
+        "x": 370,
+        "y": 740,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -1985,8 +2004,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Free Memory",
-        "x": 390,
-        "y": 700,
+        "x": 370,
+        "y": 680,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2013,8 +2032,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 140,
-        "y": 700,
+        "x": 98,
+        "y": 680,
         "wires": [
             [
                 "4b19effc.6269e"
@@ -2039,8 +2058,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 130,
-        "y": 760,
+        "x": 88,
+        "y": 740,
         "wires": [
             [
                 "1a0e55b0.e3476a"
@@ -2058,8 +2077,8 @@
         "timer": "",
         "oldrc": false,
         "name": "Wifi",
-        "x": 370,
-        "y": 640,
+        "x": 350,
+        "y": 620,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2086,8 +2105,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 130,
-        "y": 640,
+        "x": 88,
+        "y": 620,
         "wires": [
             [
                 "a2f3904b.f40ef"
@@ -2123,7 +2142,7 @@
         "active": false,
         "console": "false",
         "complete": "false",
-        "x": 890,
+        "x": 1110,
         "y": 380,
         "wires": []
     },
@@ -2138,18 +2157,18 @@
         "height": 0,
         "gtype": "gage",
         "title": "Wifi",
-        "label": "RAM",
+        "label": "Signal / 70",
         "format": "{{value}}",
         "min": 0,
-        "max": "100",
+        "max": "70",
         "colors": [
-            "#008000",
+            "#800000",
             "#e6e600",
-            "#800000"
+            "#008000"
         ],
         "seg1": "",
         "seg2": "",
-        "x": 870,
+        "x": 1090,
         "y": 420,
         "wires": []
     },
@@ -2188,10 +2207,12 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 870,
+        "x": 1090,
         "y": 460,
         "wires": [
-            [],
+            [
+                "5972dbd6.4958c4"
+            ],
             []
         ]
     },
@@ -2199,11 +2220,11 @@
         "id": "57d1608c.8e989",
         "type": "function",
         "z": "7d7d7629.7b8f98",
-        "name": "",
+        "name": "Get Value",
         "func": "var regex = /.*([0-9][0-9])\\/([0-9][0-9]).*(-[0-9][0-9]).*/i;\n\nvar result = regex.exec(msg.payload);\n//node.warn(JSON.stringify(result));\nmsg.payload = result[1];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 530,
+        "x": 560,
         "y": 420,
         "wires": [
             [
@@ -2412,7 +2433,7 @@
         "y": 340,
         "wires": [
             [
-                "af1abfc4.3fc03"
+                "3e2cc40d.af972c"
             ]
         ]
     },
@@ -2430,7 +2451,7 @@
         "y": 460,
         "wires": [
             [
-                "d6ac486.b2de2b8"
+                "b1d232d4.f61ab"
             ]
         ]
     },
@@ -2448,8 +2469,718 @@
         "y": 100,
         "wires": [
             [
+                "f86e0817.420188"
+            ]
+        ]
+    },
+    {
+        "id": "b1d232d4.f61ab",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 460,
+        "wires": [
+            [
+                "d6ac486.b2de2b8"
+            ]
+        ]
+    },
+    {
+        "id": "3e2cc40d.af972c",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "af1abfc4.3fc03"
+            ]
+        ]
+    },
+    {
+        "id": "408c379c.7efd38",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 200,
+        "wires": [
+            [
+                "be77e23a.385c4"
+            ]
+        ]
+    },
+    {
+        "id": "f86e0817.420188",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(2)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 100,
+        "wires": [
+            [
                 "149bf498.1617cb"
             ]
         ]
+    },
+    {
+        "id": "33231fef.768e8",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num.toFixed(0)});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 300,
+        "wires": [
+            [
+                "418c280a.1e7e18",
+                "3d9ef38a.e251bc"
+            ]
+        ]
+    },
+    {
+        "id": "724252f.8d7ebac",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 100,
+        "wires": [
+            [
+                "c631d008.52361"
+            ]
+        ]
+    },
+    {
+        "id": "c631d008.52361",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 100,
+        "wires": [
+            [
+                "f6286a6e.85d778"
+            ]
+        ]
+    },
+    {
+        "id": "f6286a6e.85d778",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyCPULoad.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1750,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b75fa926.e2a238",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyCPUTemp.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1760,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4420c640.c59e78",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 200,
+        "wires": [
+            [
+                "b75fa926.e2a238"
+            ]
+        ]
+    },
+    {
+        "id": "5b1fa351.664b8c",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 200,
+        "wires": [
+            [
+                "4420c640.c59e78"
+            ]
+        ]
+    },
+    {
+        "id": "e0fcb863.a25b48",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyRam.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1740,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e1b4ee41.a3464",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 340,
+        "wires": [
+            [
+                "e0fcb863.a25b48"
+            ]
+        ]
+    },
+    {
+        "id": "bcea357b.87dd48",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 340,
+        "wires": [
+            [
+                "e1b4ee41.a3464"
+            ]
+        ]
+    },
+    {
+        "id": "788cd3ce.27f91c",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyWifi.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1740,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb2f3428.acd0f8",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 460,
+        "wires": [
+            [
+                "788cd3ce.27f91c"
+            ]
+        ]
+    },
+    {
+        "id": "5972dbd6.4958c4",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 460,
+        "wires": [
+            [
+                "cb2f3428.acd0f8"
+            ]
+        ]
+    },
+    {
+        "id": "8bacb6d5.75a708",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "MonthlyDisk.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1750,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6646664d.f2aac8",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 560,
+        "wires": [
+            [
+                "8bacb6d5.75a708"
+            ]
+        ]
+    },
+    {
+        "id": "9e57e6e7.dc2938",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 560,
+        "wires": [
+            [
+                "6646664d.f2aac8"
+            ]
+        ]
+    },
+    {
+        "id": "fe1afc74.92702",
+        "type": "inject",
+        "z": "7d7d7629.7b8f98",
+        "name": "On Restart",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 1300,
+        "wires": [
+            [
+                "b1a52886.75d9a8",
+                "4d8c350f.1009dc",
+                "1e6321a0.a95bfe",
+                "5aa605e8.98e8dc",
+                "e2b5755c.2bc9a8"
+            ]
+        ]
+    },
+    {
+        "id": "b1a52886.75d9a8",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyCPULoad.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 430,
+        "y": 1220,
+        "wires": [
+            [
+                "1c8d2ca7.493213"
+            ]
+        ]
+    },
+    {
+        "id": "1c8d2ca7.493213",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 1220,
+        "wires": [
+            [
+                "301d7b3b.3a3594"
+            ]
+        ]
+    },
+    {
+        "id": "301d7b3b.3a3594",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read DailyCPULoad.json Chart Backup",
+        "links": [
+            "bdb3935d.90643"
+        ],
+        "x": 755,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "bdb3935d.90643",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "301d7b3b.3a3594"
+        ],
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "149bf498.1617cb"
+            ]
+        ]
+    },
+    {
+        "id": "4d8c350f.1009dc",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyCPUTemp.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 440,
+        "y": 1260,
+        "wires": [
+            [
+                "47c2a105.6d878"
+            ]
+        ]
+    },
+    {
+        "id": "881453f5.a6ae2",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read DailyCPUTemp.json Chart Backup",
+        "links": [
+            "4b1c52ea.a7b17c"
+        ],
+        "x": 755,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "47c2a105.6d878",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 1260,
+        "wires": [
+            [
+                "881453f5.a6ae2"
+            ]
+        ]
+    },
+    {
+        "id": "1e6321a0.a95bfe",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyRam.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 420,
+        "y": 1300,
+        "wires": [
+            [
+                "77968cab.3c22b4"
+            ]
+        ]
+    },
+    {
+        "id": "3cac60fd.4fef5",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read DailyRam.json Chart Backup",
+        "links": [
+            "e6bd3b8c.b902b8"
+        ],
+        "x": 755,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "77968cab.3c22b4",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 1300,
+        "wires": [
+            [
+                "3cac60fd.4fef5"
+            ]
+        ]
+    },
+    {
+        "id": "5aa605e8.98e8dc",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "DailyWifi.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 420,
+        "y": 1340,
+        "wires": [
+            [
+                "28bc762d.002fea"
+            ]
+        ]
+    },
+    {
+        "id": "640e1ab8.8c5c84",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read DailyWifi.json Chart Backup",
+        "links": [
+            "97ba0c61.958eb"
+        ],
+        "x": 755,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "28bc762d.002fea",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 1340,
+        "wires": [
+            [
+                "640e1ab8.8c5c84"
+            ]
+        ]
+    },
+    {
+        "id": "e2b5755c.2bc9a8",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "MonthlyDisk.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 430,
+        "y": 1380,
+        "wires": [
+            [
+                "c0e96b9d.1cae78"
+            ]
+        ]
+    },
+    {
+        "id": "ec32d24c.8b353",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read MonthlyDisk.json Chart Backup",
+        "links": [
+            "df19f6e.d53d008"
+        ],
+        "x": 755,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "c0e96b9d.1cae78",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 1380,
+        "wires": [
+            [
+                "ec32d24c.8b353"
+            ]
+        ]
+    },
+    {
+        "id": "4b1c52ea.a7b17c",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "881453f5.a6ae2"
+        ],
+        "x": 995,
+        "y": 180,
+        "wires": [
+            [
+                "be77e23a.385c4"
+            ]
+        ]
+    },
+    {
+        "id": "e6bd3b8c.b902b8",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "3cac60fd.4fef5"
+        ],
+        "x": 995,
+        "y": 320,
+        "wires": [
+            [
+                "af1abfc4.3fc03"
+            ]
+        ]
+    },
+    {
+        "id": "97ba0c61.958eb",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "640e1ab8.8c5c84"
+        ],
+        "x": 995,
+        "y": 440,
+        "wires": [
+            [
+                "d6ac486.b2de2b8"
+            ]
+        ]
+    },
+    {
+        "id": "df19f6e.d53d008",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "ec32d24c.8b353"
+        ],
+        "x": 995,
+        "y": 540,
+        "wires": [
+            [
+                "c08b278.e86ecd8"
+            ]
+        ]
+    },
+    {
+        "id": "f6bbfb65.3e9408",
+        "type": "comment",
+        "z": "7d7d7629.7b8f98",
+        "name": "Load Charts on restart",
+        "info": "Load the cached chart data on restart. This helps provide continuity of CPU stats and can provide insight into why the computer may have been having issues.",
+        "x": 120,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "14e3fa6.17b6106",
+        "type": "comment",
+        "z": "7d7d7629.7b8f98",
+        "name": "Command Line ",
+        "info": "",
+        "x": 380,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f82a9d17.14bb2",
+        "type": "comment",
+        "z": "7d7d7629.7b8f98",
+        "name": "Cache the chart data",
+        "info": "Cache the chart data every 10 minutes. This should help reduce the charts writing the SD card to death.",
+        "x": 1390,
+        "y": 40,
+        "wires": []
     }
 ]
