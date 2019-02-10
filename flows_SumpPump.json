@@ -163,7 +163,7 @@
         "z": "",
         "name": "Commands",
         "tab": "5c2a7bbf.91c7f4",
-        "order": 3,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -201,7 +201,7 @@
         "z": "",
         "name": "WiFi",
         "tab": "5c2a7bbf.91c7f4",
-        "order": 5,
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -219,7 +219,7 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "489c2c24.01be04",
-        "order": 7,
+        "order": 8,
         "width": "3",
         "height": "2"
     },
@@ -232,6 +232,28 @@
         "icon": "open_in_browser",
         "target": "newtab",
         "order": 3
+    },
+    {
+        "id": "22f348dc.749958",
+        "type": "ui_group",
+        "z": "",
+        "name": "Processor",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "625a0547.43919c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Commands",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "578381cc.a254c",
@@ -273,7 +295,8 @@
                 "578381cc.a254c",
                 "c04ea477.99c6e8",
                 "83afe701.9102a8",
-                "e52fcdad.4a8c6"
+                "e52fcdad.4a8c6",
+                "e7d039db.42c968"
             ]
         ]
     },
@@ -306,7 +329,7 @@
         "oldrc": false,
         "name": "Reboot",
         "x": 360,
-        "y": 940,
+        "y": 1060,
         "wires": [
             [],
             [],
@@ -325,7 +348,7 @@
         "oldrc": false,
         "name": "Shutdown",
         "x": 357,
-        "y": 1009,
+        "y": 1129,
         "wires": [
             [],
             [],
@@ -365,7 +388,7 @@
         "oldrc": false,
         "name": "Free Memory",
         "x": 370,
-        "y": 300,
+        "y": 380,
         "wires": [
             [
                 "2d51f04d.374cc",
@@ -388,7 +411,7 @@
         "oldrc": false,
         "name": "Disk Usage",
         "x": 370,
-        "y": 500,
+        "y": 620,
         "wires": [
             [
                 "bbc45a31.4dced8",
@@ -411,7 +434,7 @@
         "once": true,
         "onceDelay": "",
         "x": 110,
-        "y": 500,
+        "y": 620,
         "wires": [
             [
                 "e4b83e50.dac04"
@@ -427,7 +450,7 @@
         "console": "false",
         "complete": "false",
         "x": 1110,
-        "y": 260,
+        "y": 340,
         "wires": []
     },
     {
@@ -442,7 +465,7 @@
         "oldrc": false,
         "name": "Update",
         "x": 358,
-        "y": 863,
+        "y": 983,
         "wires": [
             [
                 "f198ade4.d1a5f",
@@ -465,7 +488,7 @@
         "console": "false",
         "complete": "false",
         "x": 787,
-        "y": 869,
+        "y": 989,
         "wires": []
     },
     {
@@ -474,7 +497,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 5,
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -487,7 +510,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 100,
-        "y": 940,
+        "y": 1060,
         "wires": [
             [
                 "deded38b.bf53c"
@@ -500,7 +523,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -513,7 +536,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 130,
-        "y": 860,
+        "y": 980,
         "wires": [
             [
                 "164e284e.3f98d8"
@@ -526,7 +549,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 6,
+        "order": 7,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -539,7 +562,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 90,
-        "y": 820,
+        "y": 920,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -551,15 +574,15 @@
         "type": "ui_text",
         "z": "7d7d7629.7b8f98",
         "group": "489c2c24.01be04",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "name": "",
         "label": "",
         "format": "{{msg.payload}}",
         "layout": "col-center",
-        "x": 767,
-        "y": 829,
+        "x": 750,
+        "y": 920,
         "wires": []
     },
     {
@@ -599,7 +622,7 @@
         "height": 0,
         "gtype": "gage",
         "title": "Processor",
-        "label": "CPU",
+        "label": "CPU %",
         "format": "{{value}}",
         "min": 0,
         "max": "100",
@@ -624,8 +647,8 @@
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "Used Memory %",
-        "label": "RAM",
+        "title": "Used Memory",
+        "label": "RAM %",
         "format": "{{value}}",
         "min": 0,
         "max": "100",
@@ -637,7 +660,7 @@
         "seg1": "",
         "seg2": "",
         "x": 1130,
-        "y": 300,
+        "y": 380,
         "wires": []
     },
     {
@@ -651,7 +674,7 @@
         "height": 0,
         "gtype": "gage",
         "title": "Disk Now",
-        "label": "Usage",
+        "label": "Usage %",
         "format": "{{value}}",
         "min": 0,
         "max": "100",
@@ -663,7 +686,7 @@
         "seg1": "",
         "seg2": "",
         "x": 1100,
-        "y": 520,
+        "y": 600,
         "wires": []
     },
     {
@@ -678,7 +701,7 @@
         "label": "",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "HH",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -722,7 +745,7 @@
         "label": "",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "HH",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -746,7 +769,7 @@
         ],
         "useOldStyle": true,
         "x": 1090,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "bcea357b.87dd48"
@@ -1875,10 +1898,10 @@
         "order": 4,
         "width": 0,
         "height": 0,
-        "label": "Disk Month",
+        "label": "Disk the last Month",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "M/D",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -1901,8 +1924,8 @@
             "#c5b0d5"
         ],
         "useOldStyle": true,
-        "x": 1110,
-        "y": 560,
+        "x": 1130,
+        "y": 640,
         "wires": [
             [
                 "9e57e6e7.dc2938"
@@ -1922,7 +1945,7 @@
         "label": "",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "HH",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -1984,7 +2007,7 @@
         "oldrc": false,
         "name": "Disk Usage",
         "x": 370,
-        "y": 740,
+        "y": 860,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2005,7 +2028,7 @@
         "oldrc": false,
         "name": "Free Memory",
         "x": 370,
-        "y": 680,
+        "y": 800,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2020,7 +2043,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2033,7 +2056,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 98,
-        "y": 680,
+        "y": 800,
         "wires": [
             [
                 "4b19effc.6269e"
@@ -2046,7 +2069,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2059,7 +2082,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 88,
-        "y": 740,
+        "y": 860,
         "wires": [
             [
                 "1a0e55b0.e3476a"
@@ -2078,7 +2101,7 @@
         "oldrc": false,
         "name": "Wifi",
         "x": 350,
-        "y": 620,
+        "y": 740,
         "wires": [
             [
                 "f7c2ec57.504ff"
@@ -2093,7 +2116,7 @@
         "z": "7d7d7629.7b8f98",
         "name": "",
         "group": "489c2c24.01be04",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2106,7 +2129,7 @@
         "payloadType": "str",
         "topic": "",
         "x": 88,
-        "y": 620,
+        "y": 740,
         "wires": [
             [
                 "a2f3904b.f40ef"
@@ -2125,7 +2148,7 @@
         "oldrc": false,
         "name": "Wifi",
         "x": 350,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "57d1608c.8e989"
@@ -2143,7 +2166,7 @@
         "console": "false",
         "complete": "false",
         "x": 1110,
-        "y": 380,
+        "y": 460,
         "wires": []
     },
     {
@@ -2169,7 +2192,7 @@
         "seg1": "",
         "seg2": "",
         "x": 1090,
-        "y": 420,
+        "y": 500,
         "wires": []
     },
     {
@@ -2184,7 +2207,7 @@
         "label": "",
         "chartType": "line",
         "legend": "false",
-        "xformat": "HH:mm:ss",
+        "xformat": "HH",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -2208,7 +2231,7 @@
         ],
         "useOldStyle": true,
         "x": 1090,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "5972dbd6.4958c4"
@@ -2225,7 +2248,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 560,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "e6661847.2931a8",
@@ -2430,7 +2453,7 @@
         "submitIncompleteInterval": true,
         "aggregationType": "mean",
         "x": 720,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "3e2cc40d.af972c"
@@ -2448,7 +2471,7 @@
         "submitIncompleteInterval": true,
         "aggregationType": "mean",
         "x": 720,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "b1d232d4.f61ab"
@@ -2482,7 +2505,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 890,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "d6ac486.b2de2b8"
@@ -2498,7 +2521,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 890,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "af1abfc4.3fc03"
@@ -2546,7 +2569,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 890,
-        "y": 300,
+        "y": 380,
         "wires": [
             [
                 "418c280a.1e7e18",
@@ -2672,7 +2695,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "x": 1740,
-        "y": 340,
+        "y": 420,
         "wires": [
             []
         ]
@@ -2686,7 +2709,7 @@
         "action": "",
         "pretty": false,
         "x": 1550,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "e0fcb863.a25b48"
@@ -2709,7 +2732,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 1380,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "e1b4ee41.a3464"
@@ -2726,7 +2749,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "x": 1740,
-        "y": 460,
+        "y": 540,
         "wires": [
             []
         ]
@@ -2740,7 +2763,7 @@
         "action": "",
         "pretty": false,
         "x": 1550,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "788cd3ce.27f91c"
@@ -2763,7 +2786,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 1380,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "cb2f3428.acd0f8"
@@ -2780,7 +2803,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "x": 1750,
-        "y": 560,
+        "y": 640,
         "wires": [
             []
         ]
@@ -2794,7 +2817,7 @@
         "action": "",
         "pretty": false,
         "x": 1550,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "8bacb6d5.75a708"
@@ -2817,7 +2840,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 1380,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "6646664d.f2aac8"
@@ -2844,7 +2867,8 @@
                 "4d8c350f.1009dc",
                 "1e6321a0.a95bfe",
                 "5aa605e8.98e8dc",
-                "e2b5755c.2bc9a8"
+                "e2b5755c.2bc9a8",
+                "8fb60557.dc0568"
             ]
         ]
     },
@@ -2857,7 +2881,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "x": 430,
+        "x": 390,
         "y": 1220,
         "wires": [
             [
@@ -2873,7 +2897,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 670,
         "y": 1220,
         "wires": [
             [
@@ -2889,7 +2913,7 @@
         "links": [
             "bdb3935d.90643"
         ],
-        "x": 755,
+        "x": 815,
         "y": 1220,
         "wires": []
     },
@@ -2918,7 +2942,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "x": 440,
+        "x": 400,
         "y": 1260,
         "wires": [
             [
@@ -2934,7 +2958,7 @@
         "links": [
             "4b1c52ea.a7b17c"
         ],
-        "x": 755,
+        "x": 815,
         "y": 1260,
         "wires": []
     },
@@ -2946,7 +2970,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 670,
         "y": 1260,
         "wires": [
             [
@@ -2963,7 +2987,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "x": 420,
+        "x": 380,
         "y": 1300,
         "wires": [
             [
@@ -2979,7 +3003,7 @@
         "links": [
             "e6bd3b8c.b902b8"
         ],
-        "x": 755,
+        "x": 815,
         "y": 1300,
         "wires": []
     },
@@ -2991,7 +3015,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 670,
         "y": 1300,
         "wires": [
             [
@@ -3008,7 +3032,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "x": 420,
+        "x": 380,
         "y": 1340,
         "wires": [
             [
@@ -3024,7 +3048,7 @@
         "links": [
             "97ba0c61.958eb"
         ],
-        "x": 755,
+        "x": 815,
         "y": 1340,
         "wires": []
     },
@@ -3036,7 +3060,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 670,
         "y": 1340,
         "wires": [
             [
@@ -3053,7 +3077,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "x": 430,
+        "x": 390,
         "y": 1380,
         "wires": [
             [
@@ -3067,9 +3091,10 @@
         "z": "7d7d7629.7b8f98",
         "name": "Read MonthlyDisk.json Chart Backup",
         "links": [
-            "df19f6e.d53d008"
+            "df19f6e.d53d008",
+            "f56240cf.0d713"
         ],
-        "x": 755,
+        "x": 815,
         "y": 1380,
         "wires": []
     },
@@ -3081,7 +3106,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 670,
         "y": 1380,
         "wires": [
             [
@@ -3114,7 +3139,7 @@
             "3cac60fd.4fef5"
         ],
         "x": 995,
-        "y": 320,
+        "y": 400,
         "wires": [
             [
                 "af1abfc4.3fc03"
@@ -3130,7 +3155,7 @@
             "640e1ab8.8c5c84"
         ],
         "x": 995,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "d6ac486.b2de2b8"
@@ -3146,7 +3171,7 @@
             "ec32d24c.8b353"
         ],
         "x": 995,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "c08b278.e86ecd8"
@@ -3182,5 +3207,288 @@
         "x": 1390,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "e7d039db.42c968",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Clockspeed",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "fe510862.708c88"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fe510862.708c88",
+        "type": "function",
+        "z": "7d7d7629.7b8f98",
+        "name": "Set Precision",
+        "func": "var outputMsgs = [];\n\nvar num = parseFloat(msg.payload);\nif(isNaN(num))\n{\n    // Skipping this\n}else{\n    outputMsgs.push({topic:msg.topic,payload:num/1000000});\n}\n\nreturn outputMsgs;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "f880afc2.0aa45",
+                "746b30e6.00bcf"
+            ]
+        ]
+    },
+    {
+        "id": "f880afc2.0aa45",
+        "type": "ui_gauge",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "group": "2621a588.cddb7a",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Clockspeed",
+        "label": "Ghz",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#800000",
+            "#e6e600",
+            "#008000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "746b30e6.00bcf",
+        "type": "ui_chart",
+        "z": "7d7d7629.7b8f98",
+        "name": "Clockspeed Month",
+        "group": "2621a588.cddb7a",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Clockspeed the last month (Ghz)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "M/D",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": "4",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1130,
+        "y": 280,
+        "wires": [
+            [
+                "5957c34d.2e1bdc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "418f2616.87a418",
+        "type": "file",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "MonthlyClockspeed.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1770,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be9b232a.99aa",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1550,
+        "y": 280,
+        "wires": [
+            [
+                "418f2616.87a418"
+            ]
+        ]
+    },
+    {
+        "id": "5957c34d.2e1bdc",
+        "type": "delay",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1380,
+        "y": 280,
+        "wires": [
+            [
+                "be9b232a.99aa"
+            ]
+        ]
+    },
+    {
+        "id": "8fb60557.dc0568",
+        "type": "file in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "filename": "MonthlyClockspeed.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 410,
+        "y": 1420,
+        "wires": [
+            [
+                "cbf28c6a.69496"
+            ]
+        ]
+    },
+    {
+        "id": "715e6bad.287544",
+        "type": "link out",
+        "z": "7d7d7629.7b8f98",
+        "name": "Read MonthlyClockspeed.json Chart Backup",
+        "links": [],
+        "x": 815,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "cbf28c6a.69496",
+        "type": "json",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 1420,
+        "wires": [
+            [
+                "715e6bad.287544"
+            ]
+        ]
+    },
+    {
+        "id": "f56240cf.0d713",
+        "type": "link in",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "links": [
+            "ec32d24c.8b353"
+        ],
+        "x": 995,
+        "y": 300,
+        "wires": [
+            [
+                "746b30e6.00bcf"
+            ]
+        ]
+    },
+    {
+        "id": "4728852.f3d8a7c",
+        "type": "inject",
+        "z": "7d7d7629.7b8f98",
+        "name": "Every 5 minutes",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "109fe4b5.634eeb"
+            ]
+        ]
+    },
+    {
+        "id": "109fe4b5.634eeb",
+        "type": "exec",
+        "z": "7d7d7629.7b8f98",
+        "command": "uptime -p",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "Uptime",
+        "x": 360,
+        "y": 680,
+        "wires": [
+            [
+                "8dd76d32.e63fd"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8dd76d32.e63fd",
+        "type": "ui_text_input",
+        "z": "7d7d7629.7b8f98",
+        "name": "",
+        "label": "",
+        "tooltip": "Refreshes every 5 minutes",
+        "group": "489c2c24.01be04",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 1100,
+        "y": 680,
+        "wires": [
+            []
+        ]
     }
 ]
